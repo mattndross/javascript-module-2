@@ -4,6 +4,7 @@
 3) Filter the persons to return an array with the person younger than 28 years old (hint: use filter).
 */
 
+
 let person1 = {
     name: "Alice",
     age: 25
@@ -25,11 +26,11 @@ WRITE YOUR CODE BELOW
 */
 
 
-let persons = // Complete here
+let persons = [person1, person2, person3]; // Complete here
 
-let personNames = // Complete here
+let personNames = persons.map(person => { return person.name}); // Complete here
 
-let personsYoungerThan28YearsOld = // Complete here
+let personsYoungerThan28YearsOld = persons.filter(person => person.age < 28); // Complete here
 
 
 /*
