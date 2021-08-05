@@ -16,4 +16,40 @@ var car = {
 };
 
 */
+const table = {
+    brand: 'unknown',
+    color: 'black',
+    expansible: true,
+    material: 'wood',    
+    patas: 4
+};
 
+const mobile = {
+    brand: 'xiaomi',
+    color: 'black',
+    is5G: false,
+    isTouchScreen: true,
+    operativeSistem: 'Android'
+};
+
+const bike = {
+    brand: 'Moma',
+    color: 'light-blue',
+    type: 'pistera',
+    hasLights: true,
+    rodado: 26
+}
+
+const mug = {
+    brand: 'Pull & Bear',
+    color: 'green',
+    material: 'ceramic',
+    volumeInCC: 250
+}
+
+const shirt = {
+    brand: 'Decathlon',
+    color: 'black',
+    size: 's',
+    material: 'cotton'
+}
