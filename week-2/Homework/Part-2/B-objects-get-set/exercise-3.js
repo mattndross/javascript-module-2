@@ -3,6 +3,9 @@
 */
 
 // WRITE CODE HERE
+let kitten = {};
+
+kitten.name = 'Gilbert'
 
 
 console.log(kitten.name);
