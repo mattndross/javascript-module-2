@@ -11,3 +11,11 @@ const studentGrades = {
   // Prints
   // TOM - 20
   // ABDUL - 19
+
+  function printGrades(obj) {
+    return Object.keys(obj).filter(key => obj[key] > 18)
+    .forEach(key => console.log( `${key.toUpperCase()} - ${obj[key]}`))
+  }
+
+  printGrades(studentGrades)
+  
