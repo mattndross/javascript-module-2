@@ -1,4 +1,11 @@
-function setAlarm() {}
+const setButton = document.querySelector('#set')
+setButton.addEventListener('click', () =>{
+  const alarmSet = document.querySelector('#alarmSet').value;
+  document.querySelector('#timeRemining').value = alarmSet;
+})
+function setAlarm() {
+
+}
 
 // DO NOT EDIT BELOW HERE
 
