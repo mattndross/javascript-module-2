@@ -42,14 +42,17 @@ function getName(obj) {
     return obj.destinationName;
 }
 
-
+//1) Filter the travelDestinations array to return all destination names reachable within 500 kms.
 let destinationNamesWithin500Kms = travelDestinations
 .filter(destination => destination.distanceKms < 500 )
 .map(getName);// Complete here
 
+//2) Find a destination name reachable by ferry.
 let destinationNameReachableByFerry = getName(travelDestinations.find(destination => destination.transportations.includes('ferry')));// Complete here
 
-let destinationNamesMoreThan300KmsAwayByTrain = travelDestinations.filter(destination => destination.distanceKms > 300 && destination.transportations.includes('train')).map(destination => getName(destination));// Complete here (PRINT THE RESULT IN THE CONSOLE USING FOREACH)
+//3) Print in the console all the destination names more than 300 kms far away and reachable by train.
+let destinationNamesMoreThan300KmsAwayByTrain = travelDestinations.filter(destination => destination.distanceKms > 300 && destination.transportations.includes('train'))
+.map(destination => getName(destination));// Complete here (PRINT THE RESULT IN THE CONSOLE USING FOREACH)
 
 
 /*

@@ -51,11 +51,11 @@ var mentors = [
     class: "Mar1",
     studentLikes: 0,
     job:
-      {
-        company: "Google",
-        position: "Senior developer",
-        city: "Barcelona"
-      }
+    {
+      company: "Google",
+      position: "Senior developer",
+      city: "Barcelona"
+    }
   },
   {
     firstName: "Leo",
@@ -64,11 +64,11 @@ var mentors = [
     class: "Mar3",
     studentLikes: 0,
     job:
-      {
-        company: "FC Barcelona",
-        position: "Player",
-        city: "Barcelona"
-      }
+    {
+      company: "FC Barcelona",
+      position: "Player",
+      city: "Barcelona"
+    }
   },
   {
     firstName: "John",
@@ -77,11 +77,11 @@ var mentors = [
     class: "Mar4",
     studentLikes: 0,
     job:
-      {
-        company: "Facebook",
-        position: "Software Manager",
-        city: "Chicago"
-      }
+    {
+      company: "Facebook",
+      position: "Software Manager",
+      city: "Chicago"
+    }
   },  
   {
     firstName: "Giorgio",
@@ -90,14 +90,93 @@ var mentors = [
     class: "Mar2",
     studentLikes: 0,
     job:
-      {
-        company: "Amazon",
-        position: "Senior developer",
-        city: "Barcelona"
-      }
+    {
+      company: "Amazon",
+      position: "Senior developer",
+      city: "Barcelona"
+    }
   },
-
+  
 ];
 
 //YOUR CODE HERE
+/* 
+1. Loop through the array, and for each object, `console.log()` out the sentence only for
+mentors that are in Barcelona and one of the skills is React
+"Hi, my name is {firstName} {lastName}. I work in Barcelona and i know React." */
 
+function printGreeting(arrayOfMentors) {
+  return arrayOfMentors.filter(mentor => mentor.job.city === 'Barcelona' && mentor.skills.includes('React'))
+  .forEach(mentor => console.log(`Hi, my name is ${mentor.firstName} ${mentor.lastName}. I work in Barcelona and i know React.`));
+}
+printGreeting(mentors);
+
+/* 2. To those that work in Barcelona, set "Jun1" in the class attribute, 
+and add a new skill to the list "SQL". */
+
+function setClass(arrayOfMentors) {
+  const mentorsInBarcelona = arrayOfMentors.filter(mentor => mentor.job.city === 'Barcelona').map((mentor) => {
+    mentor.class = 'Jun1';
+    mentor.skills.push('SQL');
+  });
+  return arrayOfMentors
+};
+
+//console.log(setClass(mentors))
+
+/* 3. Create an object method with the name .addSkill() to be able to add skills from it */
+
+//mentors.forEach(mentor => mentor.addSkill = function(skill) { this.skills.push(skill); })
+//console.log(mentors[1]['skills']);
+
+
+/* 4. Create a function to add a skill to all members in a list of mentors */
+
+function addSkill(mentors,newSkill){
+  mentors.forEach(mentor => mentor.skills.push(newSkill))
+}
+addSkill(mentors, 'typing');
+console.log(mentors[2].skills);
+
+/* 5. Create a function to remove a skill to all members in a list of mentors */
+
+function removeSkill(mentors, skill){
+  //mentors.forEach(mentor => mentor.skills.filter(item => item != skill)) //undefined
+  mentors.forEach(mentor => {
+    const skillIndex = mentor.skills.indexOf(skill);
+    mentor.skills.splice(skillIndex, 1)} )
+  }
+  removeSkill(mentors, 'typing');
+  console.log(mentors[2].skills);
+  
+  
+  /* 6. Create a function mentorWithMoreSkills() that returns the name of the mentor with more number of skills */
+  const mentorWithMoreSkills = (mentorsArr) => {
+    const skillsLengthsArr = mentorsArr.map(mentor => mentor.skills.length); //array de cantidad de skills
+    // console.log(skillsLengthsArr);
+    /* skillsLengthsArr.reduce( (previousMaxLength, currentMaxLength) => {
+      return previousMaxLength < currentMaxLength ? previousMaxLength : currentMaxLength
+    }); */
+    const indexOfMoreSkills = skillsLengthsArr.indexOf(Math.max(...skillsLengthsArr))
+    return mentorsArr[indexOfMoreSkills].firstName;
+  };
+  
+  console.log(mentorWithMoreSkills(mentors));
+  
+  /* 7. Create an object method .addStudentLikes() that increments by one the attribute studentLikes */
+
+  /* const addStudentLikes = (obj) => {
+    return obj.studentLikes = obj.studentLikes + 1;
+  }; */
+
+  mentors.forEach(mentor => {
+    mentor.addStudentLikes = () => {
+      return mentor.studentLikes = mentor.studentLikes + 1;
+    }
+  })
+  
+  mentors[3].addStudentLikes();
+  mentors[3].addStudentLikes();
+  mentors[3].addStudentLikes();
+  mentors[3].addStudentLikes();
+  console.log(mentors[3].studentLikes);

@@ -8,7 +8,9 @@ let person = {
     name: "Alice",
     friends: ["John", "Nina"],
   };
-  
+  person.makeFriend = (newFriend) => {
+    person.friends.push(newFriend)
+  }
   /*
   DO NOT EDIT ANYTHING BELOW THIS LINE
   */

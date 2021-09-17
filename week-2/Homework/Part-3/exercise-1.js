@@ -1,3 +1,4 @@
+
 /*
 
 Given the same "house" object again
@@ -33,13 +34,20 @@ let parkAvenueHouse = {
 */
 
 // returns the full name (first name + last name) of the owner of the house
-function getOwnerFullName(house) {}
+function getOwnerFullName(house) {
+  return `${house.currentOwner.firstName} ${house.currentOwner.lastName}`
+}
 
 // returns an array of the owners' email addresses of the two houses
-function getEmailAddresses(house1, house2) {}
+function getEmailAddresses(house1, house2) {
+  let arrayOfEmails = [house1.currentOwner.email, house2.currentOwner.email]
+  return arrayOfEmails
+}
 
 // returns the address for the cheapest house out of the two
-function getCheapestAddress(house1, house2) {}
+function getCheapestAddress(house1, house2) {
+  return (house1.price < house2.price) ? house1.address : house2.address;
+}
 
 /*
   DO NOT EDIT ANYTHING BELOW THIS LINE
