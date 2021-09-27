@@ -1,7 +1,5 @@
 /** Write your CSS in here **/
 #carousel {
     width: 600;
-    height: 450px;
-    background-image: url(/D-slideshow/imagenes/dorothea-oldani-gWx3rHnpe4k-unsplash.jpg);
-    
+    height: 450px;    
 }

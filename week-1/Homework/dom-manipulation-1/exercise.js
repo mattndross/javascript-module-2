@@ -71,7 +71,7 @@ The next color when you are in the last color of the array will be the first col
 
 /* TASK 1 */
 const allTheP = document.querySelectorAll('p');
-console.log(allTheP);
+console.log(allTheP.length);
 
 const firstDiv = document.querySelector('div');
 console.log(firstDiv);
@@ -106,11 +106,16 @@ function changeBgrColour(){
 /* TASK 4 */
 const addTextBtn = document.querySelector('#addTextBtn');
 const mainArticles = document.querySelector('#mainArticles');
-addTextBtn.addEventListener('click', addP);
+addTextBtn.addEventListener('click', e => {
+    console.log(e);
+    addP('el texto que tu quieras')
+});
 
-function addP() {
+function addP(text) {
     const paragraph = document.createElement('p');
+    paragraph.textContent = text
     mainArticles.appendChild(paragraph);
+    
 }
 
 /* TASK 5 */
@@ -156,12 +161,12 @@ const fiveColours = ['bg-primary', 'bg-danger', 'bg-success', 'bg-warning', 'bg-
 
 //add an event when the 'change colour' button is clicked
 document.querySelector('#bgrChangeBtn').addEventListener('click', changeBgrColour);
-const body = document.querySelector('body');
 
 function changeBgrColour(){
+    const body = document.querySelector('body');
     let colourIndex = fiveColours.indexOf(body.className);
-    if (body.className === fiveColours[4]) {
-        body.classList.remove(fiveColours[4])
+    if (body.className === fiveColours[fiveColours.length -1]) {
+        body.classList.remove(fiveColours[fiveColours.length -1])
         body.classList.add(fiveColours[0]);
     } else {
         body.classList.remove(fiveColours[colourIndex])

@@ -13,7 +13,7 @@ Make forward and back buttons to move _manually_ in that direction through a lis
 
 (e.g. When the user presses forward once, the display should move ONCE to the next image.)
 
-You can use any images.
+You can use any images. 
 
 You can store the images within your app or you can use links to images hosted elsewhere ("hotlinking").
 
